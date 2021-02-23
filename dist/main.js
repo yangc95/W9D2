@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\nconsole.log(\"Webpack is working!\")\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\n\nconsole.log(\"Webpack is working!\")\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    const canvasEl = document.getElementById('game-canvas');\n\n    canvasEl.width = 500;\n    canvasEl.height = 500;\n    canvasEl.fillStyle = \"black\";\n    canvasEl.fill();\n\n    var c = canvasEl.getContext('2d'); \n\n\n    // const circleX = canvasEl.width / 2;\n    // const circleY = canvasEl.height / 2;\n    // const radius = 100;\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -23,9 +23,9 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object */ \"./src/mo
 /*!******************************!*\
   !*** ./src/moving_object.js ***!
   \******************************/
-/***/ (() => {
+/***/ ((module) => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (18:33)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| };\\n| \\n> MovingObject.prototype.draw(ctx) {\\n|     \\n| };\");\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("// class MovingObject() { \n//     constructor(pos, vel, radius, color) {\n//         this.pos = pos;\n//         this.vel = vel;\n//         this.radius = radius;\n//         this.color = color;\n//     };\n\n// }\n\nfunction MovingObject(pos, vel, radius, color) {\n    this.pos = pos;\n    this.vel = vel;\n    this.radius = radius;\n    this.color = color;\n};\n\nMovingObject.prototype.draw = function draw(ctx) {\n    ctx.fillStyle = \"grey\";\n    ctx.beginPath();\n    ctx.arc(this.pos[0], this.pos[1], this.radius, 2 * Math.PI);\n    ctx.fill();\n    // ctx.stroke(); if we have fill we don't need stroke\n};\n\nMovingObject.prototype.move = function move(ctx) {\n    ctx.beginPath();\n    ctx.moveTo();\n};\n\nmodule.exports = {\n    MovingObject\n};\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ })
 
